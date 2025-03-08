@@ -17,3 +17,5 @@
 ## B4: Cài đặt
 + Sử dụng `pip install -r requirements.txt`
 + sau đó sử dụng `py main.py` hoặc `python main.py`
+# Download
++ python: https://www.python.org/downloads/release/python-3120/
