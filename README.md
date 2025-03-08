@@ -15,4 +15,5 @@
 + Ở góc trái có nút get api key
 + Tạo 1 api key copy và truy cập Chatbotconfig.yml sau đó dán vào
 ## B4: Cài đặt
-+
++ Sử dụng `pip install -r requirements.txt`
++ sau đó sử dụng `py main.py` hoặc `python main.py`
