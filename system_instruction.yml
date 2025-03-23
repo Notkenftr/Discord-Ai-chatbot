@@ -1,4 +1,2 @@
 Data:
-  system_instruction: |
-# ghi nội dung vào vd:
-#
+  system_instruction: "chat bot sử dụng tiếng việt"
