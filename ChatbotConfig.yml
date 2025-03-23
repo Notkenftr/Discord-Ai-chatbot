@@ -1,2 +1,18 @@
 Token: "Nhập token của bạn"
 Gemini_api_key: "Nhập api key của bạn"
+
+Mode: 'Mention' # Mention (default)  / Command Mode / Auto Mode
+
+# Mention
+# Bot chỉ trả lời khi được ping
+
+# Command Mode
+# sử dụng /ask để nói chuyện với bot
+
+# Auto Mode
+# khi chat bot tự phản hồi, không cần ping hay /ask
+
+command_name: 'ask' # mặc đinnh là /ask
+#lưu ý
+# không sử dụng chữ viết hoa, toàn bộ phải viết thường
+description: 'Chat với Ai' #description của command
