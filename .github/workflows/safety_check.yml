@@ -17,9 +17,8 @@ jobs:
           python-version: '3.12'
       - name: Install Dependencies
         run: |
-          pip install -r ./requirements.txt
           pip install safety
       - name: safety check
         run: |
-          safety check
+          safety check -r requirements.txt
           
