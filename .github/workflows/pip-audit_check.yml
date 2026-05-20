@@ -22,3 +22,4 @@ jobs:
       - name: pip-audit check
         run: |
           pip-audit
+          pip-audit -f json
