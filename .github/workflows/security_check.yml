@@ -19,4 +19,11 @@ jobs:
         run: |
           pip install -r ./requirements.txt
           pip install pip-audit
+          pip install safety
+      - name: pip-audit check
+        run: |
           pip-audit
+      - name: safety check
+        run: |
+          safety check
+          
