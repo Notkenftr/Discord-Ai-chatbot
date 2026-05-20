@@ -5,7 +5,7 @@ discord:
   mode:
     always_reply: false
     on_mention: true
-    on_prefix: false
+    on_prefix: true
     slash_command:
       enable: true
       name: "ask"

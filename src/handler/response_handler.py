@@ -10,7 +10,6 @@ class ResponseHandler:
         self.config = MainConfig().get_config_data()
         self.unfilter_response = None
         self.filter_response = None
-        self.handler()
 
     def _filter_response(self,response):
         filter_config = (MainConfig().get_config_data()
@@ -44,7 +43,7 @@ class ResponseHandler:
 
         return response_filter
 
-    def handler(self):
+    async def handler(self):
 
         services_dict = self.config.get("Models", {}).get("service", {})
 
@@ -62,8 +61,8 @@ class ResponseHandler:
 
             system_prompt_content = f.read()
 
-        model_func = getattr(get_model_response, use_model)
-        self.unfilter_response = asyncio.run(model_func(system_prompt_content,self.prompt))
+        model_func = getattr(model_response, use_model)
+        self.unfilter_response = await model_func(system_prompt_content,self.prompt)
         self.filter_response = self._filter_response(self.unfilter_response)
 
     def get_response(self, filter=True):
