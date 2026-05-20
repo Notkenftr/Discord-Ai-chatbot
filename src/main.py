@@ -19,7 +19,8 @@ class App(commands.Bot):
 
     async def setup_hook(self) -> None:
         await self.load_extension("src.event.on_message")
-        await self.load_extension("src.command.ask")
+        if MainConfig().get_config_data().get("discord", {}).get("mode", {}).get("slash"):
+            await self.load_extension("src.command.ask")
 
     async def _start(self):
         if not self.token or self.token == "YOUR DISCORD BOT TOKEN HERE":

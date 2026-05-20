@@ -11,6 +11,7 @@ discord:
       name: "ask"
       description: "Ask a question to the bot"
 
+      question_placeholder: "Ask your question"
 history:
   max_history: 20
 
