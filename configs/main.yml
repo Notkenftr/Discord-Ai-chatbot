@@ -1,0 +1,143 @@
+discord:
+  token: "YOUR DISCORD BOT TOKEN HERE"
+  prefix: "!"
+
+  mode:
+    always_reply: false
+    on_mention: true
+    on_prefix: false
+    slash_command:
+      enable: true
+      name: "ask"
+      description: "Ask a question to the bot"
+
+history:
+  max_history: 20
+
+Models:
+  service:
+    gemini:
+      model: "gemini-3.5-flash"
+      api_key:
+        - ""
+      enable: true
+
+    groq:
+      model: "openai/gpt-oss-120b"
+      api_key:
+        - ""
+      enable: false
+
+    openai:
+      model: "gpt-5.5"
+      api_key:
+        - ""
+      enable: false
+
+    mistral:
+      model: "mistral-medium-3-5"
+      api_key:
+        - ""
+      enable: false
+
+    localhost:
+      enable: false
+      api: "http://localhost:8000/api/{model}"
+      method: post
+      requests:
+        {
+          "model": "{model}",
+          "messages": [
+            {
+              "role": "system",
+              "content": "{system_prompt}"
+            },
+            {
+              "role": "user",
+              "content": "{user_prompt}"
+            },
+            {
+              "role": "assistant",
+              "content": "{previous_bot_response}"
+            }
+          ],
+          "top_p": "{top_p}",
+          "top_k": "{top_k}",
+          "temperature": "{temperature}"
+        }
+
+      model:
+        - "llama3"
+
+
+  model_config:
+    top_p: 0.9
+    top_k: 50
+    temperature: 0.5
+
+    max_output_tokens: 4096
+
+Response:
+  filter:
+    enable: true
+    mention_blacklist:
+      user: false
+      role: true
+      everyone: true
+      here: true
+
+    content_blacklist:
+      - "fuck"
+      - "fucking"
+      - "ass"
+      - "asshole"
+      - "bitch"
+      - "dick"
+      - "cock"
+      - "pussy"
+      - "cunt"
+      - "slut"
+      - "whore"
+      - "bastard"
+
+      - "penis"
+      - "vagina"
+      - "breasts"
+      - "boobs"
+      - "tits"
+      - "clitoris"
+      - "testicles"
+      - "anal"
+      - "anus"
+
+      - "sex"
+      - "sexy"
+      - "intercourse"
+      - "orgasm"
+      - "masturbate"
+      - "masturbation"
+      - "blowjob"
+      - "handjob"
+      - "rimjob"
+      - "cunnilingus"
+      - "fellatio"
+      - "penetration"
+      - "ejaculation"
+      - "cum"
+      - "sperm"
+      - "semen"
+      - "orgie"
+      - "orgy"
+      - "threesome"
+
+      - "porn"
+      - "porno"
+      - "pornography"
+      - "hentai"
+      - "nsfw"
+      - "erotic"
+      - "erotica"
+      - "camgirl"
+      - "stripper"
+      - "prostitute"
+      - "escort"
