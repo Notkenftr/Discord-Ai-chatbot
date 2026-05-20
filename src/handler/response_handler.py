@@ -1,6 +1,5 @@
 import re
 import os.path
-import asyncio
 from src.config import MainConfig
 from src.handler import model_response
 
@@ -52,7 +51,7 @@ class ResponseHandler:
             for model_name, model_info in services_dict.items()
             if model_info.get("enable") is True
         ]
-        if enabled_models == None:
+        if enabled_models is None:
             raise ValueError("No model enabled")
 
         use_model = enabled_models[0]

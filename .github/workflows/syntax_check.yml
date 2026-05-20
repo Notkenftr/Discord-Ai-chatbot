@@ -54,3 +54,7 @@ jobs:
       - name: Check all Python syntax in repo
         run: |
           python -m compileall -q .
+      - name: ruff check
+        run: |
+          pip install ruff
+          ruff check .

@@ -1,4 +1,3 @@
-import asyncio
 import discord
 from src.context import Context
 from src.config import MainConfig
