@@ -1,11 +1,11 @@
-name: security_check.yml
+name: pip-audit_check.yml
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
 jobs:
-  security_check:
+  pip-audit_check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -19,11 +19,6 @@ jobs:
         run: |
           pip install -r ./requirements.txt
           pip install pip-audit
-          pip install safety
       - name: pip-audit check
         run: |
           pip-audit
-      - name: safety check
-        run: |
-          safety check
-          
