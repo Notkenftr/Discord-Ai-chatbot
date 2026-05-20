@@ -1,2 +1,0 @@
-[tool.pip-audit]
-ignore-vulns = ["PYSEC-2025-183"]
